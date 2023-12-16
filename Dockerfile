@@ -9,7 +9,8 @@ RUN apk update && \
     git \
     openssh-client \
     bash \
-    && pip3 install cookiecutter && pip3 install six
+    && pip3 install cookiecutter --break-system-packages \
+    && pip3 install six --break-system-packages
 
 COPY *.sh /
 RUN chmod +x /*.sh
